@@ -1,0 +1,15 @@
+{
+  "name": "noteapp",
+  "version": "1.0.0",
+  "description": "simple app to add and modify notes.",
+  "main": "app.js",
+  "dependencies": {
+    "yargs": "^16.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
