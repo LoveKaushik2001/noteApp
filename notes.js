@@ -30,7 +30,6 @@ const removeNote = function(title){
    const notesToKeep = notes.filter(function(note){
       return note.title !== title
    })
-
    if(notes.length > notesToKeep.length){
       console.log(chalk.green.inverse('Note removed'))
       saveNotes(notesToKeep)
@@ -39,7 +38,21 @@ const removeNote = function(title){
    }
 }
 
-//append the notes
+//list a note
+const listNote = () => {
+   const notes = loadNotes()
+   if(notes.length === 0){
+      console.log(chalk.red.inverse("Note list is empty"))
+   }
+   else{
+   console.log(chalk.inverse('Your notes'))
+   notes.forEach((note) => {
+      console.log(note.title)
+   })
+}
+}
+
+//modify the notes in original file
 const saveNotes = function(notes){
    const dataJSON = JSON.stringify(notes)
    fs.writeFileSync('notes.json', dataJSON)
@@ -58,5 +71,6 @@ const loadNotes = function(){
 
 module.exports = {
    addNote: addNote,
-   removeNote: removeNote
+   removeNote: removeNote,
+   listNote: listNote
 }
