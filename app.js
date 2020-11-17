@@ -1,4 +1,5 @@
 const yargs = require('yargs')
+const { readNote } = require('./notes')
 const notes = require('./notes')
 
 //Add command
@@ -44,6 +45,22 @@ yargs.command({
    describe: "List your notes",
    handler(){
       notes.listNote()
+   }
+})
+
+//Create read command
+yargs.command({
+   command: 'read',
+   describe: 'Read a note',
+   builder:{
+      title:{
+         describe: "Give title name",
+         demandOption: true,
+         type: 'string'
+      }
+   },
+   handler(argv){
+      readNote(argv.title)
    }
 })
 
