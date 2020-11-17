@@ -10,8 +10,10 @@ const addNote = function(title,body){
       return note.title === title
    })
 
+   const duplicateNote = notes.find((note) => note.title == title)
+
    //no duplicate note
-   if(duplicateNotes.length === 0){
+   if(!duplicateNote){
       notes.push({
          title: title,
          body: body
@@ -69,6 +71,8 @@ const loadNotes = function(){
    }
 }
 
+
+//exporting to app.js
 module.exports = {
    addNote: addNote,
    removeNote: removeNote,
