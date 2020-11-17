@@ -4,6 +4,7 @@
   "description": "simple app to add and modify notes.",
   "main": "app.js",
   "dependencies": {
+    "chalk": "^4.1.0",
     "yargs": "^16.1.1"
   },
   "devDependencies": {},
